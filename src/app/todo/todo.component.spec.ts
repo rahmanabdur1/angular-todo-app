@@ -1,5 +1,5 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
-import { TodoComponent } from './todo.component';
+import { TodoComponent } from './todo.component'; // Standalone component
 import { TodoService } from '../todo.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -10,8 +10,8 @@ describe('TodoComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FormsModule, CommonModule],
-      declarations: [TodoComponent],
+      // Remove TodoComponent from declarations and add it to imports
+      imports: [TodoComponent, FormsModule, CommonModule], // Import the standalone component
       providers: [TodoService]
     }).compileComponents();
 

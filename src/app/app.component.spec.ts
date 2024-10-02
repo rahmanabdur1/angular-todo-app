@@ -1,11 +1,15 @@
 import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import { AppComponent } from './app.component'; // Assuming AppComponent is a standalone component
 import { RouterTestingModule } from '@angular/router/testing';
+import { TodoComponent } from './todo/todo.component'; // Adjust the path to your TodoComponent
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent, RouterTestingModule]
+      imports: [
+        AppComponent,
+        RouterTestingModule // No need for withRouterConfig, just use RouterTestingModule
+      ]
     }).compileComponents();
   });
 
